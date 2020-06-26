@@ -1,0 +1,94 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <div class="row">
+                <div class="col-md-5  info_left">
+                  <h2>Sign Up</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+   
+                  <button type="submit" class="btn btn-info btn-sm">Go to login → </button>
+                </div>
+                <div class="col-md-7 info_right">
+                    <form  [formGroup]="sign_up" (ngSubmit)="onSubmit()">
+                        <div class="sign-up_form">
+                          <div class="row">
+                              <div class="col-md-12">
+                                <div class="input-group input-group-sm mb-3">
+                
+                                    <!-- user name -->
+                                    <input type="text" placeholder="User Name" formControlName="uname"
+                                     class="form-control" [ngClass]="{ 'is-invalid': submitted && f.uname.errors }" />
+                            
+                                </div>
+                              </div>
+                          </div>
+
+                          <div class="row">
+                              <div class="col-md-6">
+                                <div class="input-group input-group-sm mb-3">
+                                    <!-- first naem -->
+                                    <input type="text" placeholder="First Name" formControlName="fname"
+                                     class="form-control" [ngClass]="{ 'is-invalid': submitted && f.fname.errors }" />
+                                
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="input-group input-group-sm mb-3">
+                                    <!-- last name -->
+                                    <input type="text" placeholder="Last Name" formControlName="lname" 
+                                    class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lname.errors }" />
+                                
+                                </div>
+                              </div>
+                          </div>
+  
+                          <div class="row">
+                              <div class="col-md-6">
+                                <div class="input-group input-group-sm mb-3" >
+                
+                                    <input type="password" placeholder="Password" formControlName="pwd"
+                                     class="form-control" [ngClass]="{ 'is-invalid': submitted && f.pwd.errors }" />
+                                   
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="input-group input-group-sm mb-3" >
+                
+                                    <input type="date" placeholder="Last Name" formControlName="dob" 
+                                    class="form-control" [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" />
+                                  
+                                </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-12">
+                                <div class="input-group input-group-sm mb-3"  [ngClass]="{ 'has-error': submitted && f.country.errors }" >
+                
+                                    <!-- <input type="text" placeholder="Select country" formControlName="country" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lname.errors }" /> -->
+                                   
+
+                                    <select class="form-control form-control-sm" 
+                                     [ngClass]="{ 'has-error': submitted && f.country.errors }" [id]="list" placeholder="Select country" 
+                                     formControlName="country">
+                                        <option placeholder="Select country"  *ngFor="let opt of list" [value]="opt" [selected]="opt.selected">{{opt}}</option>
+                                  </select>
+
+
+
+
+                                </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="offset-md-10">
+                                  <button type="submit" class="btn btn-info btn-sm">Submit</button>
+                              </div>
+                          </div>
+                        </div>
+                    </form>
+                </div>
+          </div>
+        </div>
+    </div>
+  </div>
